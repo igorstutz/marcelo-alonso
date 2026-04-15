@@ -12,6 +12,7 @@ const links = [
   { href: "/procedimentos", label: "Procedimentos" },
   { href: "/#jornada", label: "Jornada" },
   { href: "/#nosso-espaco", label: "Nosso espaço" },
+  { href: "/#depoimentos", label: "Depoimentos" },
   { href: "/#faq", label: "FAQ" },
   { href: "/#contato", label: "Contato" },
 ];

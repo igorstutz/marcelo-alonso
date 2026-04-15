@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { X, ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
 import { contact } from "@/lib/data";
 import { asset } from "@/lib/asset";
@@ -23,6 +23,7 @@ const images = [
 
 export default function Space() {
   const [lightbox, setLightbox] = useState<number | null>(null);
+  const touchStartX = useRef<number | null>(null);
 
   const open = (i: number) => setLightbox(i);
   const close = () => setLightbox(null);
@@ -30,6 +31,19 @@ export default function Space() {
     setLightbox((i) => (i === null ? null : (i - 1 + images.length) % images.length));
   const next = () =>
     setLightbox((i) => (i === null ? null : (i + 1) % images.length));
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const delta = e.changedTouches[0].clientX - touchStartX.current;
+    if (Math.abs(delta) > 50) {
+      if (delta < 0) next();
+      else prev();
+    }
+    touchStartX.current = null;
+  };
 
   return (
     <section id="nosso-espaco" className="relative py-20 lg:py-32 bg-white overflow-hidden">
@@ -145,6 +159,8 @@ export default function Space() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 bg-brand-950/95 backdrop-blur-md flex items-center justify-center p-4"
             onClick={close}
+            onTouchStart={onTouchStart}
+            onTouchEnd={onTouchEnd}
           >
             <button
               onClick={close}

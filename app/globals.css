@@ -54,6 +54,19 @@ h1, h2, h3, h4 {
   display: none;
 }
 
+/* Marquee animations for testimonials */
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+.group:hover [style*="marquee"] {
+  animation-play-state: paused;
+}
+
 /* Subtle grid pattern */
 .bg-grid {
   background-image:

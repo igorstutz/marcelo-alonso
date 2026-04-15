@@ -4,6 +4,7 @@ import Procedures from "@/components/Procedures";
 import Journey from "@/components/Journey";
 import Differentials from "@/components/Differentials";
 import Space from "@/components/Space";
+import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import Location from "@/components/Location";
 import Contact from "@/components/Contact";
@@ -17,6 +18,7 @@ export default function Home() {
       <Journey />
       <Differentials />
       <Space />
+      <Testimonials />
       <FAQ />
       <Location />
       <Contact />
