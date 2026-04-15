@@ -39,9 +39,9 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="lg:col-span-7"
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-sm">
-            <Sparkles size={14} className="text-brand-200" />
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/90">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-2 backdrop-blur-sm sm:px-4">
+            <Sparkles size={14} className="shrink-0 text-brand-200" />
+            <span className="whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.15em] text-white/90 sm:text-xs sm:tracking-[0.2em]">
               Cirurgia Plástica · Rio de Janeiro
             </span>
           </div>
