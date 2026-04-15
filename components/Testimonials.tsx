@@ -117,8 +117,7 @@ export default function Testimonials() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3 }}
-              className="relative max-w-md w-full"
-              onClick={(e) => e.stopPropagation()}
+              className="relative max-w-md w-full pointer-events-none"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
