@@ -17,6 +17,8 @@ export default function Hero() {
         src={asset("/images/home-hero.jpg")}
         alt=""
         aria-hidden
+        fetchPriority="high"
+        decoding="async"
         className="absolute inset-0 h-full w-full object-cover opacity-20 mix-blend-luminosity"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-brand-950/80 via-brand-900/70 to-brand-800/85" />
@@ -33,12 +35,7 @@ export default function Hero() {
       />
 
       <div className="container-x relative z-10 grid lg:grid-cols-12 gap-12 items-center pt-32 pb-20">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="lg:col-span-7"
-        >
+        <div className="lg:col-span-7">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-2 backdrop-blur-sm sm:px-4">
             <Sparkles size={14} className="shrink-0 text-brand-200" />
             <span className="whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.15em] text-white/90 sm:text-xs sm:tracking-[0.2em]">
@@ -100,14 +97,9 @@ export default function Hero() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="lg:col-span-5 relative hidden lg:block"
-        >
+        <div className="lg:col-span-5 relative hidden lg:block">
           <div className="relative mx-auto aspect-[4/5] max-w-md overflow-hidden rounded-3xl border border-white/20 shadow-2xl">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -162,7 +154,7 @@ export default function Hero() {
               <div className="text-white/80">{contact.instagramHandle}</div>
             </div>
           </motion.a>
-        </motion.div>
+        </div>
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 text-xs uppercase tracking-[0.3em] animate-pulse">
