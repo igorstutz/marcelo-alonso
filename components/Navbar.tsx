@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { contact } from "@/lib/data";
+import { asset } from "@/lib/asset";
 
 const links = [
   { href: "/#sobre", label: "Quem é" },
@@ -37,7 +38,7 @@ export default function Navbar() {
       <div className="container-x flex items-center justify-between py-4">
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/images/logo.png"
+            src={asset("/images/logo.png")}
             alt="Dr. Marcelo Alonso"
             width={180}
             height={48}

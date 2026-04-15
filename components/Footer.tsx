@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { contact } from "@/lib/data";
+import { asset } from "@/lib/asset";
 
 export default function Footer() {
   return (
@@ -8,7 +9,7 @@ export default function Footer() {
       <div className="container-x py-16 grid gap-12 lg:grid-cols-4">
         <div className="lg:col-span-2">
           <Image
-            src="/images/logo.png"
+            src={asset("/images/logo.png")}
             alt="Dr. Marcelo Alonso"
             width={200}
             height={56}
